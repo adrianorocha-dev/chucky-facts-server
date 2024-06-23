@@ -13,8 +13,7 @@
   "scripts": {
     "dev": "bun run --watch src/index.ts",
     "generate": "graphql-codegen --config codegen.yml",
-    "build": "bun run generate && tsc",
-    "start": "bun run build && bun ./dist/index.js"
+    "build": "bun run generate && tsc"
   },
   "type": "module",
   "dependencies": {
