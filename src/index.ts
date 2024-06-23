@@ -14,6 +14,22 @@ const typeDefs = await fs.readFile(
 const resolvers: Resolvers = {
   Query: {
     hello: () => "Hello World!",
+    categories: async () => {
+      const categories = await data.categories.list();
+      return categories;
+    },
+    joke: async (parent, args) => {
+      const joke = await data.jokes.getById(args.id);
+      return joke;
+    },
+    randomJoke: async (parent, args) => {
+      const joke = await data.jokes.getRandom(args.category);
+      return joke;
+    },
+    searchJokes: async (parent, args) => {
+      const searchResult = await data.jokes.search(args.query);
+      return searchResult;
+    },
   },
 };
 

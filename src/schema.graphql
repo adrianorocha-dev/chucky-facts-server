@@ -1,3 +1,17 @@
+type Joke {
+  id: String!
+  value: String!
+}
+
+type JokeSearchResult {
+  total: Int!
+  result: [Joke!]!
+}
+
 type Query {
   hello: String
+  categories: [String!]!
+  joke(id: String!): Joke
+  randomJoke(category: String): Joke
+  searchJokes(query: String!): JokeSearchResult
 }
