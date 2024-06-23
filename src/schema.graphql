@@ -12,6 +12,6 @@ type Query {
   hello: String
   categories: [String!]!
   joke(id: String!): Joke
-  randomJoke(category: String): Joke
-  searchJokes(query: String!): JokeSearchResult
+  randomJoke(category: String): Joke!
+  searchJokes(query: String!): JokeSearchResult!
 }
